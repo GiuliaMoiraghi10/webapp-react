@@ -1,0 +1,16 @@
+.footer {
+    background-color: rgb(33, 32, 39);
+    padding: 30px;
+    color: white;
+}
+
+.txt_footer {
+    font-weight: 400;
+    border: solid 1px rgb(255, 255, 255);
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.txt_footer:hover {
+    border: solid 2px rgb(255, 255, 255);
+}

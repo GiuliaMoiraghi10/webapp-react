@@ -7,3 +7,14 @@
 html {
   font-family: "Poppins", serif;
 }
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  color: currentColor;
+  cursor: pointer;
+  text-decoration: none
+}
