@@ -13,7 +13,6 @@ function App() {
           <Route path="/" element={<HomePage />}></Route>
           <Route path="/movies/:id" element={<MoviePage />}></Route>
           <Route path="/contact" element={<ContactPage />}></Route>
-
         </Route>
       </Routes>
     </BrowserRouter>

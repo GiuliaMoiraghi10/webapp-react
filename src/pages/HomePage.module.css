@@ -1,0 +1,15 @@
+.container_card {
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+.row_card {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 10px;
+}
+
+.col_4 {
+    display: flex;
+    flex-wrap: wrap;
+}

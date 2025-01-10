@@ -1,0 +1,23 @@
+.card_box {
+    padding: 20px;
+    display: flex;
+}
+
+.card {
+    border: solid 1px rgb(173, 198, 252);
+    border-radius: 5px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.link {
+    background-color: rgb(27, 24, 59);
+    color: white;
+    font-size: 12px;
+    padding: 8px;
+    border-radius: 5px;
+}
