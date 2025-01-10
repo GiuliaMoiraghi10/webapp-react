@@ -40,7 +40,7 @@ export default function HomePage() {
                 <h1>Bool Movies</h1>
             </div>
             <form onSubmit={searchMovies}>
-                <input type="text" placeholder="Cerca" value={search} onChange={(e) => setSearch(e.target.value)} />
+                <input type="text" placeholder="Cerca film" value={search} onChange={(e) => setSearch(e.target.value)} />
                 <button>Vai</button>
             </form>
             <div className={style.container_card}>

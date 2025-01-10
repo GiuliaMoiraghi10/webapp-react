@@ -3,7 +3,7 @@ import style from './CardMovie.module.css'
 
 export default function CardMovie({ movie }) {
 
-    const { id, title, director, genre, release_year, abstract, image } = movie;
+    const { id, title, director, genre, release_year, abstract, image, avg_vote } = movie;
 
     return (
         <section className={style.card_box}>
@@ -15,6 +15,7 @@ export default function CardMovie({ movie }) {
                     <p>{genre}</p>
                     <p>{release_year}</p>
                     <p>{abstract}</p>
+                    <div>{avg_vote}</div>
                     <Link to={`/movies/${id}`} className={style.link}>Maggiori Info</Link>
                 </div>
             </div>
