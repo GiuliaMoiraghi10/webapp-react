@@ -1,6 +1,7 @@
 .container_card {
     padding: 0 20px;
     margin: 0 auto;
+    width: 1024px;
 }
 
 .row_card {

@@ -5,17 +5,23 @@ import style from './HomePage.module.css'
 
 export default function HomePage() {
 
-    const movie = {
-        "id": 1,
-        "title": "Inception",
-        "director": "Christopher Nolan",
-        "genre": "Science Fiction",
-        "release_year": 2010,
-        "abstract": "A skilled thief is given a chance at redemption if he can successfully perform inception.",
-        "image": "inception.jpg",
-        "created_at": "2024-11-29T10:40:13.000Z",
-        "updated_at": "2025-01-09T11:37:42.000Z"
+    const [movies, setMovies] = useState([])
+
+    function fetchMovies() {
+
+        axios.get('http://localhost:3000/api/movies')
+            .then(response => {
+                // console.log(res.data)
+                setMovies(response.data)
+            })
+            .catch(err => {
+                console.error(err)
+            })
     }
+
+    useEffect(() => {
+        fetchMovies()
+    }, [])
 
     return (
         <section>
@@ -23,14 +29,15 @@ export default function HomePage() {
                 <h1>Bool Movies</h1>
             </div>
             <div className={style.container_card}>
-                <div className={style.row_card}>
-                    <div className={style.col_4}>
-                        <CardMovie movie={movie} />
-                    </div>
-                    <div className={style.col_4}>
-                        <CardMovie movie={movie} />
-                    </div>
-                </div>
+                <ul className={style.row_card}>
+                    {
+                        movies.map(movie => {
+                            return <li key={movie.id} className={style.col_4}>
+                                <CardMovie movie={movie} />
+                            </li>
+                        })
+                    }
+                </ul>
 
             </div>
         </section>

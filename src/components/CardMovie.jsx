@@ -8,12 +8,15 @@ export default function CardMovie({ movie }) {
     return (
         <section className={style.card_box}>
             <div className={style.card}>
-                <h4>{title}</h4>
-                <h5>{director}</h5>
-                <p>{genre}</p>
-                <p>{release_year}</p>
-                <p>{abstract}</p>
-                <Link to={`/movies/${id}`} className={style.link}>Maggiori Info</Link>
+                <div className={style.col_4}>
+                    <img src={image} className={style.img} alt="" />
+                    <h4>{title}</h4>
+                    <h5>{director}</h5>
+                    <p>{genre}</p>
+                    <p>{release_year}</p>
+                    <p>{abstract}</p>
+                    <Link to={`/movies/${id}`} className={style.link}>Maggiori Info</Link>
+                </div>
             </div>
         </section>
     )
