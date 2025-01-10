@@ -7,9 +7,15 @@ export default function HomePage() {
 
     const [movies, setMovies] = useState([])
 
+    const [search, setSearch] = useState('')
+
     function fetchMovies() {
 
-        axios.get('http://localhost:3000/api/movies')
+        axios.get('http://localhost:3000/api/movies', {
+            params: {
+                search: search
+            }
+        })
             .then(response => {
                 // console.log(res.data)
                 setMovies(response.data)
@@ -17,6 +23,11 @@ export default function HomePage() {
             .catch(err => {
                 console.error(err)
             })
+    }
+
+    function searchMovies(e) {
+        e.preventDefault()
+        fetchMovies()
     }
 
     useEffect(() => {
@@ -28,6 +39,10 @@ export default function HomePage() {
             <div className="container">
                 <h1>Bool Movies</h1>
             </div>
+            <form onSubmit={searchMovies}>
+                <input type="text" placeholder="Cerca" value={search} onChange={(e) => setSearch(e.target.value)} />
+                <button>Vai</button>
+            </form>
             <div className={style.container_card}>
                 <ul className={style.row_card}>
                     {
