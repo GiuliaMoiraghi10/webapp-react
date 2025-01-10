@@ -37,12 +37,13 @@ export default function HomePage() {
     return (
         <section>
             <div className="container">
-                <h1>Bool Movies</h1>
+                <h1 className={style.title}>Bool Movies</h1>
             </div>
-            <form onSubmit={searchMovies}>
-                <input type="text" placeholder="Cerca film" value={search} onChange={(e) => setSearch(e.target.value)} />
-                <button>Vai</button>
+            <form onSubmit={searchMovies} className={style.form}>
+                <input className={style.input} type="text" placeholder="Cerca film" value={search} onChange={(e) => setSearch(e.target.value)} />
+                <button className={style.btn}>Cerca</button>
             </form>
+            <hr />
             <div className={style.container_card}>
                 <ul className={style.row_card}>
                     {
