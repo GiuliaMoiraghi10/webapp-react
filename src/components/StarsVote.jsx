@@ -2,7 +2,7 @@ import { StarIcon } from '@heroicons/react/24/outline';
 import { StarIcon as StarSolid } from '@heroicons/react/24/solid'
 import style from './StarsVote.module.css'
 
-export default function StarVote({ vote = 0 }) {
+export default function StarsVote({ vote = 0 }) {
 
     return (
         <div>

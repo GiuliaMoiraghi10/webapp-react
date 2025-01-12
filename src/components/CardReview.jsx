@@ -1,4 +1,4 @@
-import StarVote from "./StarsVote"
+import StarsVote from "./StarsVote"
 
 export default function CardReview({ review }) {
 
@@ -9,7 +9,7 @@ export default function CardReview({ review }) {
             <p>{text}</p>
             <div>
                 <strong>Voto</strong>
-                <StarVote vote={vote} />
+                <StarsVote vote={vote} />
             </div>
             <div>
                 Recensione di {name}

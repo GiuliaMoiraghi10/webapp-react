@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import CardReview from '../../components/CardReview'
 import style from './MoviePage.module.css'
+import StarsVote from '../../components/StarsVote'
 
 export default function MoviePage() {
 
@@ -42,7 +43,7 @@ export default function MoviePage() {
                 <div>
                     <h2>Tutte le recensioni</h2>
                     <div>
-                        <strong>Media: {movie.avg_vote}</strong>
+                        <StarsVote vote={movie.avg_vote} />
                     </div>
                 </div>
                 {movie.reviews.length ?

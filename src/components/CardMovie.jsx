@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import style from './CardMovie.module.css'
+import StarsVote from './StarsVote';
 
 export default function CardMovie({ movie }) {
 
@@ -15,7 +16,9 @@ export default function CardMovie({ movie }) {
                     <p className={style.genre}><strong>Genere: </strong>{genre}</p>
                     <p className={style.release_year}><strong>Anno:</strong> {release_year}</p>
                     <p className={style.abstract}><strong>Trama: </strong>{abstract}</p>
-                    <div className={style.avg_vote}><strong>Voto: </strong>{avg_vote}</div>
+                    <div className={style.avg_vote}><strong>Voto: </strong>
+                        <StarsVote vote={avg_vote} />
+                    </div>
                     <Link to={`/movies/${id}`} className={style.link}>Maggiori Info</Link>
                 </div>
             </div>
