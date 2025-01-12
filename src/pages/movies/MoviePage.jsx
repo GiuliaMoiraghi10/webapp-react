@@ -59,11 +59,15 @@ export default function MoviePage() {
                 </div>
                 <div>
                     <form action="">
-                        <p>
+                        <div>
                             <label htmlFor="nome">Nome</label>
                             <input type="text" placeholder='Anonimo' name='name' id='name' />
-                        </p>
-                        <p>
+                        </div>
+                        <div>
+                            <label htmlFor="review">Recensione</label>
+                            <textarea name="review" id="review" rows="5" placeholder='Scrivi la tua recensione...'></textarea>
+                        </div>
+                        <div>
                             <label htmlFor="voto">Voto</label>
                             <select name="vote" id="vote">
                                 <option value="1">1</option>
@@ -72,7 +76,7 @@ export default function MoviePage() {
                                 <option value="1">4</option>
                                 <option value="1">5</option>
                             </select>
-                        </p>
+                        </div>
                         <button>Invia</button>
                     </form>
                 </div>
