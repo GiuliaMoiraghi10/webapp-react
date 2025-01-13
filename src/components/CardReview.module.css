@@ -1,0 +1,23 @@
+.review_card {
+    border-radius: 8px;
+    padding: 20px;
+    border: solid 1px rgb(173, 198, 252);
+    margin: 30px 20px;
+    width: auto;
+}
+
+.review {
+    font-size: 15px;
+}
+
+.vote {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.name {
+    font-size: 13px;
+    font-style: italic;
+    color: rgb(173, 198, 252);
+}

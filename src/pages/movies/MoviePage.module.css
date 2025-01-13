@@ -1,3 +1,29 @@
 img {
     width: 300px;
 }
+
+.movie_description {
+    display: flex;
+    gap: 30px;
+    padding: 20px;
+}
+
+.title {
+    font-size: 40px;
+}
+
+.director {
+    font-size: 25px;
+    font-style: italic;
+    color: rgb(57, 55, 65);
+}
+
+.abstract {
+    margin-top: 50px;
+    font-size: 15px;
+}
+
+.reviews {
+    padding: 10px 30px;
+    background-color: rgb(173, 198, 252);
+}

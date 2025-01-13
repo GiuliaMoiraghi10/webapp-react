@@ -27,23 +27,21 @@ export default function MoviePage() {
 
     return (
         movie ? <>
-            <section>
+            <section className={style.movie_description}>
                 <div>
                     <img src={movie.image} alt="" />
                 </div>
                 <div>
-                    <h1>{movie.title}</h1>
-                    <h3>{movie.director}</h3>
-                </div>
-                <div>
-                    <p>{movie.abstract}</p>
+                    <h1 className={style.title}>{movie.title}</h1>
+                    <h3 className={style.director}>{movie.director}</h3>
+                    <p className={style.abstract}>{movie.abstract}</p>
                 </div>
             </section>
             <section>
-                <div>
+                <div className={style.reviews}>
                     <h2>Tutte le recensioni</h2>
                     <div>
-                        <StarsVote vote={movie.avg_vote} />
+                        Voto medio: <StarsVote vote={movie.avg_vote} />
                     </div>
                 </div>
                 {movie.reviews.length ?
