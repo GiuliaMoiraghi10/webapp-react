@@ -65,3 +65,20 @@
 .btn:hover {
     background-color: rgb(173, 198, 252);
 }
+
+/* media query */
+@media screen and (max-width: 992px) {
+    .row_card {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .row_card {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        padding: 10px;
+    }
+}
