@@ -53,7 +53,7 @@ export default function MoviePage() {
                     </ul> :
                     <div>Nessuna recensione</div>
                 }
-                <FormReviews />
+                <FormReviews id={id} onSuccess={fetchMovie} />
             </section>
         </> :
             <div>Caricamento...</div>
