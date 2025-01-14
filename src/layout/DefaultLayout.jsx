@@ -2,6 +2,7 @@ import Header from "./Header"
 import Footer from "./Footer"
 import { Outlet } from "react-router-dom"
 import style from './DefaultLayout.module.css'
+import Loader from "../components/Loader"
 
 export default function DefaultLayout() {
     return (
@@ -11,6 +12,7 @@ export default function DefaultLayout() {
                 <Outlet />
             </main>
             <Footer />
+            <Loader />
         </section>
     )
 }
