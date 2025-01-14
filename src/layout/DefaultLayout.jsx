@@ -3,8 +3,13 @@ import Footer from "./Footer"
 import { Outlet } from "react-router-dom"
 import style from './DefaultLayout.module.css'
 import Loader from "../components/Loader"
+import { useContext } from "react"
+import GlobalContext from "../context/globalContext"
 
 export default function DefaultLayout() {
+
+    const { isLoading } = useContext(GlobalContext)
+
     return (
         <section>
             <Header />
@@ -12,7 +17,7 @@ export default function DefaultLayout() {
                 <Outlet />
             </main>
             <Footer />
-            <Loader />
+            {isLoading && <Loader />}
         </section>
     )
 }
