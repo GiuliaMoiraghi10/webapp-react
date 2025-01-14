@@ -1,15 +1,20 @@
 import CardMovie from "../components/CardMovie"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext } from "react"
 import axios from "axios"
 import style from './HomePage.module.css'
+import GlobalContext from "../context/globalContext"
 
 export default function HomePage() {
+
+    const { setIsLoading } = useContext(GlobalContext)
 
     const [movies, setMovies] = useState([])
 
     const [search, setSearch] = useState('')
 
     function fetchMovies() {
+
+        setIsLoading(true)
 
         axios.get('http://localhost:3000/api/movies', {
             params: {
@@ -22,6 +27,9 @@ export default function HomePage() {
             })
             .catch(err => {
                 console.error(err)
+            })
+            .finally(() => {
+                setIsLoading(false)
             })
     }
 

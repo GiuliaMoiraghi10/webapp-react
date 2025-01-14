@@ -1,6 +1,7 @@
 import style from "./FormReviews.module.css"
 import axios from "axios"
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import GlobalContext from "../context/globalContext"
 
 // creo variabile con elementi vuoti, che poi riempirà l'user
 const initialFormData = {
@@ -14,6 +15,8 @@ export default function FormReviews({ id, onSuccess = () => { } }) {
     // creo variabile di stato per compilazione form
     const [formData, setFormData] = useState(initialFormData) //passo variabile con dati vuoti
     const [validForm, setValidForm] = useState(true) //il form è valido quando lo stato della variabile è true
+
+    const { setIsLoading } = useContext(GlobalContext)
 
     function onFormChange(e) { // cambio valori del form
         const { value, name: propName } = e.target
@@ -43,7 +46,7 @@ export default function FormReviews({ id, onSuccess = () => { } }) {
         //     setValidForm(false) //condizione falsa, quindi non è valido
         //     return
         // }
-
+        setIsLoading(true)
         // chiamata axios x recuperare reviews esistenti + inserimento recensione nuova da form
         axios.post(`http://localhost:3000/api/movies/${id}/reviews`, data)
             .then(res => {
@@ -53,6 +56,9 @@ export default function FormReviews({ id, onSuccess = () => { } }) {
             }).catch(err => {
                 console.log(err)
                 setValidForm(false)
+            })
+            .finally(() => {
+                setIsLoading(false)
             })
     }
 
