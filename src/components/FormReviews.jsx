@@ -37,19 +37,19 @@ export default function FormReviews({ id, onSuccess = () => { } }) {
             vote: parseInt(formData.vote)
         }
 
-        // validazione client
-        if (!data.name || !data.vote || !data.vote < 1 || data.vote > 5) {
-            console.log('Il form non è valido')
-            setValidForm(false) //condizione falsa, quindi non è valido
-            return
-        }
+        // // validazione client
+        // if (!data.name || !data.vote || !data.vote < 1 || data.vote > 5) {
+        //     console.log('Il form non è valido')
+        //     setValidForm(false) //condizione falsa, quindi non è valido
+        //     return
+        // }
 
         // chiamata axios x recuperare reviews esistenti + inserimento recensione nuova da form
         axios.post(`http://localhost:3000/api/movies/${id}/reviews`, data)
             .then(res => {
                 console.log(res)
+                setFormData(initialFormData) // se chiamata non è corretta, ripristino form con valori vuoti
                 onSuccess()
-                setFormData(initialFormData) // se chiamata non è corretta, ripristino form con valori vuoti 
             }).catch(err => {
                 console.log(err)
                 setValidForm(false)
@@ -69,6 +69,7 @@ export default function FormReviews({ id, onSuccess = () => { } }) {
                     <input type="text" placeholder='Anonimo' name='name' id='name' value={formData.name} onChange={onFormChange} className={style.input_nome} />
                 </div>
                 <div>
+                    <label htmlFor="text"></label>
                     <textarea name="text" id="text" rows="5" placeholder='Scrivi la tua recensione...' value={formData.text} onChange={onFormChange} className={style.input_text}></textarea>
                 </div>
                 <div>
